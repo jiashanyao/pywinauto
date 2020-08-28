@@ -262,6 +262,9 @@ class WindowSpecification(object):
 
         return ctrl
 
+    def resolve_control(self, timeout=None, retry_interval=None):
+        return self.__resolve_control(self.criteria, timeout, retry_interval)
+
     def wrapper_object(self):
         """Allow the calling code to get the HwndWrapper object"""
         ctrls = self.__resolve_control(self.criteria)
